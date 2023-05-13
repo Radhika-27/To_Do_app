@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Add Task</h1>
+  <hr>
+  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+      <div class="form-group">
+          <label for="TaskName">TaskName</label>
+          <input type="text" class="form-control" id="task" placeholder="Enter task" ngModel name="taskName" required>
+          <small *ngIf="taskForm.invalid && taskForm.dirty" id="errorMessage" class="form-text text-danger">Required
+              field</small>
+      </div>
+      <div class="form-group">
+        <label for="TaskName">DueDate</label>
+        <input type="text" class="form-control" id="dueDate" placeholder="Enter dueDate" ngModel name="dueDate" required>
+        <small *ngIf="taskForm.invalid && taskForm.dirty" id="errorMessage" class="form-text text-danger">Required
+            field</small>
+    </div>
+
+      <button [disabled]="taskForm.invalid" id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+  <hr>
+
+
